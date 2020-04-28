@@ -4,6 +4,8 @@
 .. |gcp_add_registry| image:: images/gcp_add_registry.jpg
 .. |gcp_devices| image:: images/gcp_devices.jpg
 .. |gcp_create_device| image:: images/gcp_create_device.jpg
+.. |certs| image:: images/certs.jpg
+.. |import| image:: images/import.jpg
 .. |gcp_01| image:: images/gcp_01.jpg
 .. |gcp_02| image:: images/gcp_02.jpg
 .. |gcp_03| image:: images/gcp_03.jpg
@@ -60,7 +62,7 @@ To create a new project
 Download roots.pem
 ~~~~~~~~~~~~~~~~~~
 
-To downlaod the roots.pem security certificate
+To download the roots.pem security certificate
 
   - From the command line shell of your machine run the command
 
@@ -136,7 +138,15 @@ You should upload your certificates to Fledge
 
   - From the Fledge user interface select the *Certificate Store* from the left-hand menu bar
 
+    +---------+
+    | |certs| |
+    +---------+
+
   - Click on the Import option in the top left corner
+
+    +----------+
+    | |import| |
+    +----------+
 
   - In the Certificate option select the *Choose file* option and select your roots.pem and click on open
 
