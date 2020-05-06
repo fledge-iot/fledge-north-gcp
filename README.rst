@@ -12,7 +12,7 @@ to the topic for the Fledge itself.
 
 The plugin requires a certificate and private key to communicate with
 the IoT Core Gateway and also the Google root certificate. There
-certificates shoud be stored in the Fledge certificate store.
+certificates should be stored in the Fledge certificate store.
 
 Configuration Items
 -------------------
@@ -33,7 +33,7 @@ device_id
 
 key
   The name of the key associated with the gateway device, e.g. if you
-  created a key file MyGatway.pem then this is simply the string MyGateway
+  created a key file MyGateway.pem then this is simply the string MyGateway
 
 algorithm
   The algorithm used to create your key, usually RS256
