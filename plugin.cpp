@@ -85,7 +85,7 @@ const char *default_config = QUOTE({
 				"description" : "The source of data to send",
 				"type" : "enumeration",
 				"default" : "readings",
-				"order" : "8",
+				"order" : "7",
 				"displayName" : "Data Source",
 				"options" : ["readings", "statistics"]
 			}
