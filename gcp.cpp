@@ -630,6 +630,7 @@ string GCP::getKeyPath()
 	{
 		m_keyPath = "/usr/local/fledge/data/etc/certs/"; 
 	}
+	m_keyPath +=	"pem/";
 	m_keyPath +=	m_key;
 	m_keyPath += ".pem";
 
@@ -657,7 +658,7 @@ string GCP::getRootPath()
 	{
 		m_rootPath = "/usr/local/fledge/data/etc/certs/"; 
 	}
-	m_rootPath += "roots.pem";
+	m_rootPath += "pem/roots.pem";
 
 	return m_rootPath;
 }
