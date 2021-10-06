@@ -91,7 +91,7 @@ GCP *gcp = (GCP *)context;
  * Constructor for the GCP object
  */
 GCP::GCP() : m_jwtStr(NULL), m_subscribed(false), m_connected(false),
-	m_lastDelivered(0), m_lastSent(0), m_jwtExpire(0)
+	m_lastDelivered(0), m_lastSent(0), m_jwtExpire(0), m_disconnected(false)
 {
 	m_log = Logger::getLogger();
 	OpenSSL_add_all_algorithms();
@@ -313,6 +313,12 @@ int GCP::connect()
 int rc = -1;
 MQTTClient_connectOptions conn_opts = MQTTClient_connectOptions_initializer;
 
+	if (m_disconnected)
+	{
+		MQTTClient_disconnect(m_client, 10000);
+		MQTTClient_destroy(&m_client);
+		m_disconnected = false;
+	}
 	createJWT();
 	MQTTClient_create(&m_client, m_address.c_str(), m_clientID.c_str(),
 			MQTTCLIENT_PERSISTENCE_NONE, NULL);
@@ -486,8 +492,9 @@ void GCP::msgArrived(char *topic, MQTTClient_message *msg)
  */
 void GCP::lostConnection(const char *reason)
 {
-	m_log->error("MQTT connection lost: %s", reason);
+	m_log->error("MQTT connection lost: %s", reason ? reason : "");
 	m_connected = false;
+	m_disconnected = true;
 }
 
 /**

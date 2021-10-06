@@ -53,6 +53,7 @@ class GCP {
 				m_asset;
 		int		m_lastSent;
 		int		m_lastDelivered;
+		bool		m_disconnected;
 };
 
 #endif
