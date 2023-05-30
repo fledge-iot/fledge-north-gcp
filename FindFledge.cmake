@@ -75,6 +75,7 @@ else()
 	find_path(_FIND_INCLUDES NAMES plugin_api.h PATHS ${FLEDGE_INCLUDE})
 	if (_FIND_INCLUDES)
 		list(APPEND FLEDGE_INCLUDE_DIRS ${_FIND_INCLUDES})
+		list(APPEND FLEDGE_INCLUDE_DIRS ${_FIND_INCLUDES}/Simple-Web-Server)
 	endif()
 	# Remove current value from cache
 	unset(_FIND_INCLUDES CACHE)
